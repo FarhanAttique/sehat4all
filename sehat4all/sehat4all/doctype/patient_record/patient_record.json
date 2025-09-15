@@ -1,0 +1,232 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{patient_id}",
+ "creation": "2024-12-12 16:01:27.215065",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_name",
+  "gender",
+  "weight",
+  "column_break_xlwf",
+  "father_name",
+  "contact_number",
+  "cnic",
+  "section_break_elcy",
+  "emergency",
+  "section_break_lapn",
+  "age",
+  "column_break_hfod",
+  "date_of_birth",
+  "section_break_xssc",
+  "years",
+  "column_break_wrxw",
+  "months",
+  "column_break_syzq",
+  "days",
+  "additional_details_section",
+  "address",
+  "blood_group",
+  "patient_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Patient Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Gender",
+   "options": "\nMale\nFemale\nNew Born"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight",
+   "precision": "1"
+  },
+  {
+   "fieldname": "column_break_xlwf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "father_name",
+   "fieldtype": "Data",
+   "label": "Father Name"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Contact Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cnic",
+   "fieldtype": "Data",
+   "label": "CNIC / Passport No."
+  },
+  {
+   "fieldname": "section_break_elcy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "emergency",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Emergency Patient",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_lapn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Age",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hfod",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_xssc",
+   "fieldtype": "Section Break",
+   "label": "Enter Age"
+  },
+  {
+   "fieldname": "years",
+   "fieldtype": "Int",
+   "label": "Years"
+  },
+  {
+   "fieldname": "column_break_wrxw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "months",
+   "fieldtype": "Int",
+   "label": "Months"
+  },
+  {
+   "fieldname": "column_break_syzq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "days",
+   "fieldtype": "Int",
+   "label": "Days"
+  },
+  {
+   "fieldname": "additional_details_section",
+   "fieldtype": "Section Break",
+   "label": "Additional Details"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "blood_group",
+   "fieldtype": "Data",
+   "label": "Blood Group"
+  },
+  {
+   "fieldname": "patient_id",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "MR No."
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Patient Appointment",
+   "link_fieldname": "patient_id"
+  },
+  {
+   "link_doctype": "Emergency",
+   "link_fieldname": "patient_id"
+  },
+  {
+   "link_doctype": "New Admission",
+   "link_fieldname": "patient_id"
+  },
+  {
+   "link_doctype": "Lab Reports",
+   "link_fieldname": "patient_id"
+  },
+  {
+   "link_doctype": "Additional Payments",
+   "link_fieldname": "patient_id"
+  },
+  {
+   "link_doctype": "Discharge Bill",
+   "link_fieldname": "patient_id"
+  }
+ ],
+ "modified": "2025-09-15 17:44:57.596291",
+ "modified_by": "Administrator",
+ "module": "Sehat4All",
+ "name": "Patient Record",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Receptionist",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Doctor",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,47 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-12 15:52:28.578907",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "lab_tests",
+  "upload_results",
+  "payment_amount"
+ ],
+ "fields": [
+  {
+   "allow_on_submit": 1,
+   "fieldname": "lab_tests",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Lab tests",
+   "options": "Lab tests list"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "upload_results",
+   "fieldtype": "Attach Image",
+   "label": "Upload Results"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "payment_amount",
+   "fieldtype": "Currency",
+   "label": "Payment amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-09-15 18:04:01.263635",
+ "modified_by": "Administrator",
+ "module": "Sehat4All",
+ "name": "lab tests",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

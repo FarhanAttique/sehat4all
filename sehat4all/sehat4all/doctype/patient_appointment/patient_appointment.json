@@ -1,0 +1,336 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{doctor_initials}{DD}{MM}{YYYY}-{appointment_number}",
+ "creation": "2024-12-12 16:06:48.156546",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "emergency",
+  "column_break_vbof",
+  "patient_id",
+  "appointment_number",
+  "section_break_exad",
+  "column_break_duoa",
+  "phone_number",
+  "patient_name",
+  "father_name",
+  "gender",
+  "age",
+  "column_break_qjqo",
+  "email",
+  "cnic",
+  "address",
+  "weight",
+  "section_break_lymc",
+  "years",
+  "column_break_rfeu",
+  "months",
+  "column_break_udkt",
+  "days",
+  "column_break_uwqy",
+  "date_of_birth",
+  "section_break_osut",
+  "nvf",
+  "payment",
+  "discount",
+  "column_break_csmi",
+  "doctor_id",
+  "status",
+  "section_break_ddho",
+  "appointment_date",
+  "receptionist",
+  "doctor_initials",
+  "column_break_vjzr",
+  "appointment_time",
+  "remaining_total",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "emergency",
+   "fieldtype": "Check",
+   "label": "Emergency"
+  },
+  {
+   "fieldname": "column_break_vbof",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "patient_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Medical Record Number (MR)",
+   "options": "Patient Record"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "appointment_number",
+   "fieldtype": "Data",
+   "label": "Appointment Number"
+  },
+  {
+   "fieldname": "section_break_exad",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_duoa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "label": "Phone Number"
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Patient Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "father_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Father Name"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale\nNew Born\nOthers",
+   "reqd": 1
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "label": "Age",
+   "precision": "1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_qjqo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Patient Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "cnic",
+   "fieldtype": "Data",
+   "label": "CNIC / Passport No."
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "section_break_lymc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "years",
+   "fieldtype": "Data",
+   "label": "Years"
+  },
+  {
+   "fieldname": "column_break_rfeu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "months",
+   "fieldtype": "Data",
+   "label": "Months"
+  },
+  {
+   "fieldname": "column_break_udkt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "days",
+   "fieldtype": "Data",
+   "label": "Days"
+  },
+  {
+   "fieldname": "column_break_uwqy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Data",
+   "label": "Birth Date"
+  },
+  {
+   "fieldname": "section_break_osut",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "nvf",
+   "fieldtype": "Check",
+   "label": "NVF"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "depends_on": "eval: doc.nvf == 0",
+   "fieldname": "payment",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Payment",
+   "precision": "0",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "discount",
+   "fieldtype": "Data",
+   "label": "Discount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_csmi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "doctor_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Doctor",
+   "options": "Doctor",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Scheduled",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "mandatory_depends_on": "eval:doc.docstatus==1",
+   "options": "Scheduled\nCompleted\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_ddho",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Today",
+   "fieldname": "appointment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Appointment Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "receptionist",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Receptionist",
+   "read_only": 1
+  },
+  {
+   "fieldname": "doctor_initials",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Doctor Initials",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_vjzr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Now",
+   "fieldname": "appointment_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Appointment Time",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "remaining_total",
+   "fieldtype": "Data",
+   "label": "Remaining Total"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Patient Appointment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-15 17:59:01.195465",
+ "modified_by": "Administrator",
+ "module": "Sehat4All",
+ "name": "Patient Appointment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Receptionist",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Doctor",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,266 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{DrAS}-{###}-{DD}/{MM}/{YYYY}",
+ "creation": "2024-12-12 16:00:05.418894",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_id",
+  "patient_name",
+  "age",
+  "gender",
+  "column_break_qzul",
+  "phone",
+  "father_name",
+  "weight",
+  "doctor_id",
+  "section_break_agug",
+  "bp",
+  "temp",
+  "column_break_rems",
+  "pulse",
+  "bsr",
+  "section_break_uytu",
+  "column_break_ovzz",
+  "report",
+  "column_break_zjyg",
+  "report1",
+  "column_break_ihxo",
+  "diagnosis",
+  "advice",
+  "note",
+  "section_break_dnbd",
+  "report2",
+  "lab_tests",
+  "amended_from",
+  "section_break_sjix",
+  "payment",
+  "discount",
+  "remaining_total",
+  "column_break_nxgv",
+  "visit_date"
+ ],
+ "fields": [
+  {
+   "fetch_from": "appointment_no.patient_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "label": "Age"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "label": "Gender"
+  },
+  {
+   "fieldname": "column_break_qzul",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "patient_id",
+   "fieldtype": "Data",
+   "label": "Medical Record Number (MR)"
+  },
+  {
+   "bold": 1,
+   "default": "Dr. Arslan Siddiqui",
+   "fieldname": "doctor_id",
+   "fieldtype": "Data",
+   "label": "Doctor Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "section_break_uytu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "report",
+   "fieldtype": "Table",
+   "label": "Presenting Complaints",
+   "options": "Presenting Complaints Table"
+  },
+  {
+   "fieldname": "column_break_zjyg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "report1",
+   "fieldtype": "Table",
+   "label": "Medical Examination Findings",
+   "options": "Medical Examination Findings Table"
+  },
+  {
+   "fieldname": "column_break_ihxo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "diagnosis",
+   "fieldtype": "Data",
+   "label": "Diagnosis"
+  },
+  {
+   "fieldname": "advice",
+   "fieldtype": "Data",
+   "label": "Advice"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Data",
+   "label": "Additional Instructions"
+  },
+  {
+   "fieldname": "section_break_dnbd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "report2",
+   "fieldtype": "Table",
+   "label": "Prescription",
+   "options": "Patient Report"
+  },
+  {
+   "fieldname": "lab_tests",
+   "fieldtype": "Table",
+   "label": "Lab Tests",
+   "options": "lab tests"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Check Patient",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_sjix",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "payment",
+   "fieldtype": "Data",
+   "label": "Amount Paid"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "discount",
+   "fieldtype": "Float",
+   "label": "Discount",
+   "precision": "2"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "remaining_total",
+   "fieldtype": "Currency",
+   "label": "Remaining Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_nxgv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "visit_date",
+   "fieldtype": "Date",
+   "label": "Visit date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bp",
+   "fieldtype": "Data",
+   "label": "Blood Pressure"
+  },
+  {
+   "fieldname": "pulse",
+   "fieldtype": "Data",
+   "label": "Pulse"
+  },
+  {
+   "fieldname": "temp",
+   "fieldtype": "Data",
+   "label": "Temperature"
+  },
+  {
+   "fieldname": "bsr",
+   "fieldtype": "Data",
+   "label": "BSR"
+  },
+  {
+   "fieldname": "column_break_ovzz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_agug",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_rems",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "father_name",
+   "fieldtype": "Data",
+   "label": "Father Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-15 21:35:58.876887",
+ "modified_by": "Administrator",
+ "module": "Sehat4All",
+ "name": "Check Patient",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Doctor",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

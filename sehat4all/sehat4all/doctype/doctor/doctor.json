@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:{doctor_name}",
+ "creation": "2024-12-12 15:57:47.146910",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "doctor_id",
+  "doctor_name",
+  "specialization",
+  "is_anesthesia",
+  "email",
+  "contact_number",
+  "availablilty_schedule_tab",
+  "availability_schedule"
+ ],
+ "fields": [
+  {
+   "fieldname": "doctor_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Doctor ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "doctor_name",
+   "fieldtype": "Data",
+   "label": "Doctor Name"
+  },
+  {
+   "fieldname": "specialization",
+   "fieldtype": "Data",
+   "label": "Specialization"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_anesthesia",
+   "fieldtype": "Check",
+   "label": "Anesthesia Doctor"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "availablilty_schedule_tab",
+   "fieldtype": "Tab Break",
+   "label": "Availablilty Schedule"
+  },
+  {
+   "fieldname": "availability_schedule",
+   "fieldtype": "Table",
+   "label": "Availability Schedule",
+   "options": "Availability"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-15 17:57:47.054242",
+ "modified_by": "Administrator",
+ "module": "Sehat4All",
+ "name": "Doctor",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Receptionist",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
