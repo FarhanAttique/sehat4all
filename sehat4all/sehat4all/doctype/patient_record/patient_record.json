@@ -102,7 +102,7 @@
   },
   {
    "fieldname": "date_of_birth",
-   "fieldtype": "Date",
+   "fieldtype": "Data",
    "label": "Date of Birth",
    "read_only": 1
   },
@@ -157,33 +157,8 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [
-  {
-   "link_doctype": "Patient Appointment",
-   "link_fieldname": "patient_id"
-  },
-  {
-   "link_doctype": "Emergency",
-   "link_fieldname": "patient_id"
-  },
-  {
-   "link_doctype": "New Admission",
-   "link_fieldname": "patient_id"
-  },
-  {
-   "link_doctype": "Lab Reports",
-   "link_fieldname": "patient_id"
-  },
-  {
-   "link_doctype": "Additional Payments",
-   "link_fieldname": "patient_id"
-  },
-  {
-   "link_doctype": "Discharge Bill",
-   "link_fieldname": "patient_id"
-  }
- ],
- "modified": "2025-09-15 17:44:57.596291",
+ "links": [],
+ "modified": "2025-09-16 18:32:37.136500",
  "modified_by": "Administrator",
  "module": "Sehat4All",
  "name": "Patient Record",

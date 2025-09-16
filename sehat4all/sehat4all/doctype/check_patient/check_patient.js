@@ -190,12 +190,12 @@ frappe.ui.form.on("Check Patient", {
                     frm.set_value("gender", patient.gender);
                     frm.set_value("weight", patient.weight);
                     frm.set_value("father_name", patient.father_name);
-                    frm.set_value("cnic", patient.cnic);
+                    
                     frm.set_value("phone", patient.contact_number);
-                    frm.set_value("address", patient.address);
+                    
 
                     // Make sure fields are editable
-                    ["patient_name", "age", "gender", "weight", "father_name", "cnic", "phone", "address", "emergency"].forEach(field => {
+                    ["patient_name", "age", "gender", "weight", "father_name",  "phone"].forEach(field => {
                         frm.set_df_property(field, "read_only", 0);
                     });
                 }
@@ -216,12 +216,52 @@ frappe.ui.form.on("Check Patient", {
                         "gender": frm.doc.gender,
                         "weight": frm.doc.weight,
                         "father_name": frm.doc.father_name,
-                        "cnic": frm.doc.cnic,
-                        "contact_number": frm.doc.phone, // fixed mapping
-                        "address": frm.doc.address
+                        
+                        "contact_number": frm.doc.phone // fixed mapping
+                        
                     }
                 }
             });
         }
     }
 });
+
+
+
+frappe.ui.form.on('Check Patient', {
+    years: function(frm) {
+        update_age_and_dob(frm);
+    },
+    months: function(frm) {
+        update_age_and_dob(frm);
+    },
+    days: function(frm) {
+        update_age_and_dob(frm);
+    }
+});
+
+function update_age_and_dob(frm) {
+    let age_parts = [];
+
+    let years = frm.doc.years || 0;
+    let months = frm.doc.months || 0;
+    let days = frm.doc.days || 0;
+
+    if (years) age_parts.push(`${years} years`);
+    if (months) age_parts.push(`${months} months`);
+    if (days) age_parts.push(`${days} days`);
+
+    frm.set_value('age', age_parts.join(' '));
+
+    // Calculate Date of Birth
+    let today = new Date();
+    today.setFullYear(today.getFullYear() - years);
+    today.setMonth(today.getMonth() - months);
+    today.setDate(today.getDate() - days);
+
+    let formatted_dob = ("0" + today.getDate()).slice(-2) + "-" + 
+                        ("0" + (today.getMonth() + 1)).slice(-2) + "-" + 
+                        today.getFullYear();
+
+    frm.set_value('date_of_birth', formatted_dob);
+}

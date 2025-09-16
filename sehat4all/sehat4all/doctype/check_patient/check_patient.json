@@ -8,13 +8,21 @@
  "field_order": [
   "patient_id",
   "patient_name",
-  "age",
   "gender",
+  "age",
   "column_break_qzul",
   "phone",
   "father_name",
   "weight",
   "doctor_id",
+  "section_break_mwnf",
+  "years",
+  "column_break_iuar",
+  "months",
+  "column_break_swqd",
+  "days",
+  "column_break_xflc",
+  "date_of_birth",
   "section_break_agug",
   "bp",
   "temp",
@@ -51,12 +59,14 @@
   {
    "fieldname": "age",
    "fieldtype": "Data",
-   "label": "Age"
+   "label": "Age",
+   "read_only": 1
   },
   {
    "fieldname": "gender",
-   "fieldtype": "Data",
-   "label": "Gender"
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale\nOther"
   },
   {
    "fieldname": "column_break_qzul",
@@ -64,8 +74,9 @@
   },
   {
    "fieldname": "patient_id",
-   "fieldtype": "Data",
-   "label": "Medical Record Number (MR)"
+   "fieldtype": "Link",
+   "label": "Medical Record Number (MR)",
+   "options": "Patient Record"
   },
   {
    "bold": 1,
@@ -221,12 +232,49 @@
    "fieldname": "father_name",
    "fieldtype": "Data",
    "label": "Father Name"
+  },
+  {
+   "fieldname": "section_break_mwnf",
+   "fieldtype": "Section Break",
+   "label": "Enter Age"
+  },
+  {
+   "fieldname": "years",
+   "fieldtype": "Int",
+   "label": "Years"
+  },
+  {
+   "fieldname": "column_break_iuar",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "months",
+   "fieldtype": "Int",
+   "label": "Months"
+  },
+  {
+   "fieldname": "column_break_swqd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "days",
+   "fieldtype": "Int",
+   "label": "Days"
+  },
+  {
+   "fieldname": "column_break_xflc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Data",
+   "label": "Date of Birth"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-15 21:35:58.876887",
+ "modified": "2025-09-16 18:31:00.879427",
  "modified_by": "Administrator",
  "module": "Sehat4All",
  "name": "Check Patient",
