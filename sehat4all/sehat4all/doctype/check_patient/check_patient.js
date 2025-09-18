@@ -265,3 +265,62 @@ function update_age_and_dob(frm) {
 
     frm.set_value('date_of_birth', formatted_dob);
 }
+
+
+
+
+
+frappe.ui.form.on('Check Patient', {
+    refresh: function(frm) {
+        // Add a custom button in the Patient Appointment form
+        frm.add_custom_button('Create New Check Patient', function() {
+            frappe.new_doc('Check Patient'); // Opens a new Patient form
+        }, 'Actions'); // Group under 'Actions'
+
+        frm.add_custom_button('View Check Patient', function() {
+            frappe.set_route('List', 'Check Patient'); // Navigates to the Patient Appointment list
+        }, 'Actions'); // Group under 'Actions'
+    }
+});
+
+
+
+
+frappe.ui.form.on('Check Patient', {
+    after_save: function(frm) {
+        // Create a custom dialog
+        let dialog = new frappe.ui.Dialog({
+            title: 'Check Patient Submitted',
+            fields: [
+                {
+                    fieldtype: 'HTML',
+                    fieldname: 'message',
+                    options: `
+                        <div>
+                            <p>Check Patient has been submitted successfully</p>
+                            <a class="btn btn-sm btn-primary" 
+                               href="/api/method/frappe.utils.print_format.download_pdf?doctype=Check%20Patient&name=${frm.doc.name}&format=Checkup&no_letterhead=0&_lang=English" 
+                               target="_blank">Get PDF</a>
+
+                            <a class="btn btn-sm btn-success"  
+                               href="/printview?doctype=Check%20Patient&name=${frm.doc.name}&trigger_print=1&format=Checkup&no_letterhead=0" 
+                               target="_blank">Print</a>
+
+                        </div>
+                    `
+                }
+            ],
+            primary_action_label: 'Close',
+            primary_action: function() {
+                dialog.hide();
+            }
+        });
+
+        dialog.show();
+
+        // Automatically close the dialog after 10 seconds
+        setTimeout(() => {
+            dialog.hide();
+        }, 3000); // 3 seconds
+    }
+});
