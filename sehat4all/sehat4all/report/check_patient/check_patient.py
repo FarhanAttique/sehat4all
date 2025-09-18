@@ -1,9 +1,9 @@
 import frappe
+
 def execute(filters=None):
     if filters.get('from_date') and filters.get('to_date'):
         # Define columns
         columns = [
-            {"label": "Appointment No", "fieldname": "appointment_no", "fieldtype": "Data", "width": 120},
             {"label": "Patient ID", "fieldname": "patient_id", "fieldtype": "Data", "width": 120},
             {"label": "Patient Name", "fieldname": "patient_name", "fieldtype": "Data", "width": 200},
             {"label": "Doctor Name", "fieldname": "doctor_id", "fieldtype": "Data", "width": 200},
@@ -11,6 +11,10 @@ def execute(filters=None):
             {"label": "Weight", "fieldname": "weight", "fieldtype": "Float", "width": 80},
             {"label": "Gender", "fieldname": "gender", "fieldtype": "Data", "width": 80},
             {"label": "Phone", "fieldname": "phone", "fieldtype": "Data", "width": 120},
+            {"label": "Temp", "fieldname": "temp", "fieldtype": "Data", "width": 120},
+            {"label": "B. P", "fieldname": "bp", "fieldtype": "Data", "width": 120},
+            {"label": "Pulse", "fieldname": "pulse", "fieldtype": "Data", "width": 120},
+            {"label": "BSR", "fieldname": "bsr", "fieldtype": "Data", "width": 120},
             {"label": "Diagnosis", "fieldname": "diagnosis", "fieldtype": "Data", "width": 250},
             {"label": "Advice", "fieldname": "advice", "fieldtype": "Data", "width": 250},
             {"label": "Note", "fieldname": "note", "fieldtype": "Data", "width": 250},
@@ -24,12 +28,15 @@ def execute(filters=None):
         # SQL query with necessary joins
         query = """
             SELECT 
-                cp.appointment_no, 
                 cp.patient_id, 
                 cp.patient_name, 
                 cp.doctor_id AS doctor_id, 
                 cp.age, 
                 cp.weight, 
+                cp.temp, 
+                cp.bsr,
+                cp.pulse,
+                cp.bp,
                 cp.gender, 
                 cp.phone, 
                 cp.diagnosis, 
@@ -53,16 +60,17 @@ def execute(filters=None):
         values = [filters.get('from_date'), filters.get('to_date')]
         conditions = ""
 
-        if filters.get('appointment_no'):
-            conditions += " AND cp.appointment_no = %s"
-            values.append(filters.get('appointment_no'))
-
         if filters.get('patient_id'):
             conditions += " AND cp.patient_id = %s"
             values.append(filters.get('patient_id'))
 
+
+        if filters.get('phone'):
+            conditions += " AND cp.phone = %s"
+            values.append(filters.get('phone'))
+
         # Complete query with conditions
-        query += conditions + " GROUP BY cp.name ORDER BY cp.visit_date, cp.appointment_no"
+        query += conditions + " GROUP BY cp.name ORDER BY cp.visit_date"
 
         # Execute query
         raw_data = frappe.db.sql(query, values, as_dict=True)
