@@ -1,0 +1,61 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"mPV59I3U4T\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Sehat4All</span>\",\"col\":12}},{\"id\":\"Ico4RWwwAG\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Patient Record\",\"col\":3}},{\"id\":\"DrZGPBvHeF\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Doctor\",\"col\":3}},{\"id\":\"s6dL2YAK2v\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Check Patient\",\"col\":3}},{\"id\":\"w2n4ayjpOW\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"75vldW-NML\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Report Check Patient\",\"col\":3}}]",
+ "creation": "2025-09-18 15:25:22.721481",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Sehat4All",
+ "links": [],
+ "modified": "2025-09-18 15:38:17.955423",
+ "modified_by": "Administrator",
+ "module": "Sehat4All",
+ "name": "Sehat4All",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Patient Record",
+   "link_to": "Patient Record",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Report Check Patient",
+   "link_to": "Check Patient",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Doctor",
+   "link_to": "Doctor",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Check Patient",
+   "link_to": "Check Patient",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Sehat4All"
+}
