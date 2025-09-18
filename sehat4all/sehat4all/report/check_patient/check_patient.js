@@ -18,14 +18,14 @@ frappe.query_reports["Check Patient"] = {
             "reqd": 1
         },
         {
-            "fieldname": "appointment_no",
-            "label": __("Appointment No"),
-            "fieldtype": "Data",
-            "reqd": 0
-        },
-        {
             "fieldname": "patient_id",
             "label": __("Medical Record Number (MR)"),
+            "fieldtype": "Data",
+            "reqd": 0
+        }, 
+        {
+            "fieldname": "phone",
+            "label": __("Phone Number"),
             "fieldtype": "Data",
             "reqd": 0
         }
